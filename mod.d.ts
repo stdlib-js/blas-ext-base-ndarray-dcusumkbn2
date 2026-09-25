@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,17 +16,29 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { float64ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Compute the cumulative sum of a one-dimensional double-precision floating-point ndarray using a second-order iterative Kahan–Babuška algorithm.
+* Computes the cumulative sum of a one-dimensional double-precision floating-point ndarray using a second-order iterative Kahan–Babuška algorithm.
 *
-* @module @stdlib/blas-ext-base-ndarray-dcusumkbn2
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a one-dimensional output ndarray.
+*     -   a zero-dimensional ndarray containing the initial sum.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns output ndarray
 *
 * @example
 * var Float64Vector = require( '@stdlib/ndarray-vector-float64' );
 * var scalar2ndarray = require( '@stdlib/ndarray-from-scalar' );
-* var dcusumkbn2 = require( '@stdlib/blas-ext-base-ndarray-dcusumkbn2' );
 *
 * var x = new Float64Vector( [ 1.0, 3.0, 4.0, 2.0 ] );
 * var y = new Float64Vector( [ 0.0, 0.0, 0.0, 0.0 ] );
@@ -41,12 +53,9 @@
 * var bool = ( z === y );
 * // returns true
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function dcusumkbn2( arrays: [ float64ndarray, float64ndarray, float64ndarray ] ): float64ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = dcusumkbn2;
